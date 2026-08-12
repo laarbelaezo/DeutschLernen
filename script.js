@@ -215,7 +215,7 @@ const formHandler = (() => {
     if (!form) return;
     const successBox = document.getElementById('form-success');
     
-    // REEMPLAZA LA URL DE ABAJO CON LA URL QUE OBTENGAS DE GOOGLE APPS SCRIPT
+    // PEGA AQUÍ LA URL DE TU DESPLIEGUE QUE TERMINA EN /exec
     const SCRIPT_URL = 'https://script.google.com/a/macros/ecci.edu.co/s/AKfycbyo0e9BigfgeZul9pELSm1bFk3eCCJpwfVMB74qaefdk-EVcE3XmZZse1wrROwy9a1_5g/exec';
 
     form.addEventListener('submit', async (e) => {
@@ -224,22 +224,21 @@ const formHandler = (() => {
         submitBtn.textContent = 'Enviando matrícula...';
         submitBtn.disabled = true;
 
-        const formData = {
-            nombre: document.getElementById('nombre').value,
-            telefono: document.getElementById('telefono').value,
-            email: document.getElementById('email').value,
-            nivel: document.getElementById('nivel').value,
-            mensaje: document.getElementById('mensaje').value
-        };
+        const formData = new URLSearchParams();
+        formData.append('nombre', document.getElementById('nombre').value);
+        formData.append('telefono', document.getElementById('telefono').value);
+        formData.append('email', document.getElementById('email').value);
+        formData.append('nivel', document.getElementById('nivel').value);
+        formData.append('mensaje', document.getElementById('mensaje').value);
 
         try {
             await fetch(SCRIPT_URL, {
                 method: 'POST',
                 mode: 'no-cors',
                 headers: {
-                    'Content-Type': 'text/plain'
+                    'Content-Type': 'application/x-www-form-urlencoded'
                 },
-                body: JSON.stringify(formData)
+                body: formData
             });
 
             form.reset();
