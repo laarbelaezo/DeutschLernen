@@ -209,25 +209,51 @@ const quizEngine = (() => {
     }
 })();
 
-// 3. Validación de Formulario (Contacto)
+// 3. Validación y Envío de Formulario a Google Sheets
 const formHandler = (() => {
     const form = document.getElementById('registration-form');
     if (!form) return;
     const successBox = document.getElementById('form-success');
+    
+    // REEMPLAZA LA URL DE ABAJO CON LA URL QUE OBTENGAS DE GOOGLE APPS SCRIPT
+    const SCRIPT_URL = 'https://script.google.com/a/macros/ecci.edu.co/s/AKfycbyo0e9BigfgeZul9pELSm1bFk3eCCJpwfVMB74qaefdk-EVcE3XmZZse1wrROwy9a1_5g/exec';
 
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
         e.preventDefault();
         const submitBtn = form.querySelector('button[type="submit"]');
-        submitBtn.textContent = 'Validando credenciales...';
+        submitBtn.textContent = 'Enviando matrícula...';
         submitBtn.disabled = true;
 
-        setTimeout(() => {
+        const formData = {
+            nombre: document.getElementById('nombre').value,
+            telefono: document.getElementById('telefono').value,
+            email: document.getElementById('email').value,
+            nivel: document.getElementById('nivel').value,
+            mensaje: document.getElementById('mensaje').value
+        };
+
+        try {
+            await fetch(SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'text/plain'
+                },
+                body: JSON.stringify(formData)
+            });
+
             form.reset();
             submitBtn.textContent = 'Procesar Matrícula';
             submitBtn.disabled = false;
+            
             successBox.classList.remove('hidden');
             setTimeout(() => { successBox.classList.add('hidden'); }, 5000);
-        }, 1500);
+        } catch (error) {
+            console.error('Error al enviar:', error);
+            alert('Hubo un problema al procesar el registro. Inténtalo de nuevo.');
+            submitBtn.textContent = 'Procesar Matrícula';
+            submitBtn.disabled = false;
+        }
     });
 })();
 
