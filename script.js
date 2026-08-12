@@ -216,7 +216,7 @@ const formHandler = (() => {
     const successBox = document.getElementById('form-success');
     
     // PEGA AQUÍ LA URL DE TU DESPLIEGUE QUE TERMINA EN /exec
-    const SCRIPT_URL = 'https://script.google.com/a/macros/ecci.edu.co/s/AKfycbyo0e9BigfgeZul9pELSm1bFk3eCCJpwfVMB74qaefdk-EVcE3XmZZse1wrROwy9a1_5g/exec';
+    const SCRIPT_URL = 'https://script.google.com/a/macros/ecci.edu.co/s/AKfycbxVRiSWTfea2i7hUKwI5LvtwHgkKWYI3NoBgIcVzUa2W0nUCPCiFoEPVUeMsuMU88sl/exec';
 
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
