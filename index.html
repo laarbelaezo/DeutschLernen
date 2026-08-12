@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeutschLernen - Dominio del Alemán</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">DeutschLernen</div>
+        <nav id="main-nav">
+            <a href="#inicio" class="nav-link active" data-target="inicio">Inicio</a>
+            <a href="#cursos" class="nav-link" data-target="cursos">Programas</a>
+            <a href="#practica" class="nav-link" data-target="practica">Práctica</a>
+            <a href="#contacto" class="nav-link" data-target="contacto">Inscripción</a>
+        </nav>
+    </header>
+
+    <main id="app-container">
+        <!-- Marquesina de texto animada en CSS -->
+        <div class="marquee-container">
+            <div class="marquee-text">
+                <span>WILLKOMMEN • ERFOLG • SPRACHE • KULTUR • DEUTSCHLAND • ÖSTERREICH • SCHWEIZ • GRAMMATIK • </span>
+                <span>WILLKOMMEN • ERFOLG • SPRACHE • KULTUR • DEUTSCHLAND • ÖSTERREICH • SCHWEIZ • GRAMMATIK • </span>
+            </div>
+        </div>
+
+        <!-- Página 1: Inicio Expandido -->
+        <section id="inicio" class="page-section active">
+            <div class="hero">
+                <div class="typing-container">
+                    <h1 class="typing-text">Piensa y respira en alemán.</h1>
+                </div>
+                <p class="hero-subtitle">Una inmersión absoluta diseñada para el rigor académico.</p>
+                <button class="cta-btn pulse-anim" onclick="appRouter.navigate('cursos')">Explorar la Academia</button>
+            </div>
+            
+            <div class="content-wrapper text-heavy">
+                <h2 class="section-title">Nuestra Filosofía de Enseñanza</h2>
+                
+                <div class="text-block floating-block">
+                    <h3>El mito de la dificultad</h3>
+                    <p>El alemán tiene fama de ser un idioma imposible. Esta percepción nace de metodologías obsoletas que priorizan la memorización mecánica de tablas sobre la comprensión de la lógica interna del idioma. Nosotros desmontamos esa barrera. Abordamos la gramática como un sistema arquitectónico: una vez que comprendes dónde va el verbo en una oración principal y cómo se desplaza al final en una subordinada, el resto de las piezas encajan solas.</p>
+                    <p>No enseñamos a traducir. Traducir ralentiza la comunicación y genera errores de sintaxis. Forzamos a nuestros estudiantes a asociar conceptos directamente con el vocabulario germano. Si ves una manzana, no piensas "manzana" y luego "Apfel"; piensas en "der Apfel" de inmediato, interiorizando el género gramatical desde el primer segundo de contacto visual.</p>
+                </div>
+
+                <div class="text-block">
+                    <h3>Inmersión Cultural Real</h3>
+                    <p>Dominar el idioma no sirve de nada si ignoras los códigos sociales del DACH-Raum (Alemania, Austria y Suiza). La forma en que te diriges a un colega en Berlín difiere de cómo redactas un correo formal para una empresa en Zúrich. Integramos estas variables socioculturales en cada nivel. Aprenderás a usar el "Sie" con propiedad, a entender la puntualidad como una muestra de respeto profesional y a estructurar tus argumentos de forma directa, eliminando los rodeos propios de la comunicación latina.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Página 2: Cursos Expandidos -->
+        <section id="cursos" class="page-section">
+            <div class="content-wrapper">
+                <h2 class="section-title">Estructura Curricular</h2>
+                
+                <div class="courses-layout">
+                    <article class="course-detail-card slide-up-anim">
+                        <div class="course-header">
+                            <h3>Grundlegende Kenntnisse (A1-A2)</h3>
+                            <span class="badge">Básico</span>
+                        </div>
+                        <p class="course-intro">Construcción de bases gramaticales sólidas y vocabulario esencial para la comunicación diaria.</p>
+                        <ul class="course-topics">
+                            <li>Declinación estricta de artículos en Nominativo, Acusativo y Dativo.</li>
+                            <li>Estructura de oraciones y regla del TeKaMoLo (Temporal, Kausal, Modal, Lokal).</li>
+                            <li>Dominio de verbos separables e inseparables en contextos reales.</li>
+                            <li>Construcción de historias en el pasado usando Präteritum y Perfekt.</li>
+                        </ul>
+                    </article>
+
+                    <article class="course-detail-card slide-up-anim" style="animation-delay: 0.2s;">
+                        <div class="course-header">
+                            <h3>Preparación Start Deutsch 1</h3>
+                            <span class="badge">Certificación</span>
+                        </div>
+                        <p class="course-intro">Entrenamiento intensivo y cronometrado para aprobar la certificación oficial.</p>
+                        <p class="course-description">Este módulo no es para aprender desde cero, sino para entrenar el formato del examen. Analizamos las trampas comunes en los audios (Hören) y estructuramos plantillas mentales para la redacción de cartas formales e informales (Schreiben).</p>
+                    </article>
+
+                    <article class="course-detail-card slide-up-anim" style="animation-delay: 0.4s;">
+                        <div class="course-header">
+                            <h3>Interkulturelle Kommunikation in Geschäfte</h3>
+                            <span class="badge">Avanzado</span>
+                        </div>
+                        <p class="course-intro">Alemán enfocado en negociaciones, protocolos empresariales y entendimiento corporativo.</p>
+                        <p class="course-description">Profundizamos en la redacción de informes administrativos semanales, análisis de contratos y vocabulario técnico. Simulamos juntas directivas donde debes defender un proyecto frente a hablantes nativos, evaluando tu fluidez y asertividad.</p>
+                    </article>
+                </div>
+
+                <div class="text-block highlight-block mt-4">
+                    <h3>Tutorías Académicas y Evaluación</h3>
+                    <p>Sabemos que cada estudiante procesa la gramática a su propio ritmo. Por eso, implementamos un riguroso <strong>Modelo de Evaluación Docente para Tutorías Académicas</strong>. Estas sesiones no son simples charlas de repaso. Son espacios estructurados donde medimos tu curva de aprendizaje, identificamos lagunas en tu declinación o pronunciación y aplicamos correcciones inmediatas antes de que el error se fosilice. El seguimiento es continuo, milimétrico y orientado a resultados concretos.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Página 3: Práctica Interactiva -->
+        <section id="practica" class="page-section">
+            <div class="content-wrapper">
+                <h2 class="section-title">Evaluación de Competencias</h2>
+                
+                <div class="practice-layout-vertical">
+                    
+                    <!-- Bloque de lectura -->
+                    <div class="reading-block text-block">
+                        <h3>Leseverstehen: Die Bedeutung der Pünktlichkeit</h3>
+                        <p class="german-text">In Deutschland, Österreich und der Schweiz ist Pünktlichkeit nicht nur eine Tugend, sondern eine grundlegende Erwartung im beruflichen und privaten Alltag. Wenn ein Meeting für 09:00 Uhr angesetzt ist, bedeutet das, dass alle Teilnehmer um 08:55 Uhr anwesend und vorbereitet sind. Eine Verspätung von nur fünf Minuten ohne vorherige Entschuldigung wird oft as mangelnder Respekt gegenüber der Zeit der anderen interpretiert.</p>
+                        <p class="german-text">Diese kulturelle Norm spiegelt sich auch im öffentlichen Nahverkehr wider. Die Fahrpläne von Zügen und Bussen sind präzise kalkuliert. Obwohl es gelegentlich zu Verspätungen kommt, bleibt das System stark auf Effizienz und Verlässlichkeit ausgerichtet. Für internationale Fachkräfte ist es daher entscheidend, diese Zeitkultur von Anfang an zu verinnerlichen, um Missverständnisse am Arbeitsplatz zu vermeiden.</p>
+                        <div class="translation-hint tooltip-trigger">
+                            <span>Mover el cursor aquí para ver un resumen en español</span>
+                            <div class="tooltip-content">La lectura explica que en los países germanoparlantes, la puntualidad es una expectativa fundamental. Llegar 5 minutos tarde sin avisar se considera una falta de respeto. Esta norma también se refleja en el transporte público, por lo que los profesionales extranjeros deben adaptarse a esta cultura para evitar conflictos laborales.</div>
+                        </div>
+                    </div>
+
+                    <!-- Simulador Avanzado -->
+                    <div class="practice-interactive">
+                        <div id="quiz-container" class="quiz-box advanced-quiz">
+                            <div class="quiz-status-bar">
+                                <div class="progress-track">
+                                    <div id="quiz-progress" class="progress-fill"></div>
+                                </div>
+                                <div class="quiz-metrics">
+                                    <span id="question-counter" class="metric-badge">Pregunta 1/4</span>
+                                    <span id="score-display" class="metric-badge score-badge">Puntos: 0</span>
+                                    <span id="timer-display" class="metric-badge timer-badge">⏳ 01:30</span>
+                                </div>
+                            </div>
+
+                            <div id="question-stage" class="question-stage">
+                                <h3 id="question-text" class="question-text">Inicializando motor de evaluación...</h3>
+                                <div id="options-grid" class="options-grid interactive-grid"></div>
+                            </div>
+                            
+                            <div id="feedback-panel" class="feedback-panel hidden">
+                                <p id="feedback-text"></p>
+                                <p id="tutoring-alert" class="tutoring-alert hidden"></p>
+                            </div>
+                            
+                            <button id="next-btn" class="btn-primary full-width hidden mt-4">Siguiente Desafío</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Página 4: Contacto Expandido -->
+        <section id="contacto" class="page-section">
+            <div class="content-wrapper">
+                <h2 class="section-title">Formalización de Inscripción</h2>
+                
+                <div class="contact-layout">
+                    <div class="form-section">
+                        <p class="form-instructions">Completa el formulario con tus datos reales. Toda la información será procesada por el equipo administrativo para generar tu expediente académico. Te contactaremos en un plazo máximo de 48 horas hábiles.</p>
+                        <form id="registration-form" class="custom-form">
+                            <div class="form-row">
+                                <div class="form-group half">
+                                    <label for="nombre">Nombre Completo</label>
+                                    <input type="text" id="nombre" required>
+                                </div>
+                                <div class="form-group half">
+                                    <label for="telefono">Teléfono de Contacto</label>
+                                    <input type="tel" id="telefono" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Correo Electrónico Principal</label>
+                                <input type="email" id="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="nivel">Selección de Programa</label>
+                                <select id="nivel" required>
+                                    <option value="">Selecciona tu curso objetivo...</option>
+                                    <option value="a1">Grundlegende Kenntnisse (A1-A2)</option>
+                                    <option value="sd1">Preparación Start Deutsch 1</option>
+                                    <option value="biz">Interkulturelle Kommunikation in Geschäfte</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="mensaje">Experiencia previa con el idioma</label>
+                                <textarea id="mensaje" rows="4"></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary full-width hover-glow">Procesar Matrícula</button>
+                        </form>
+                        <div id="form-success" class="hidden success-box">
+                            Registro procesado. Verifica tu bandeja de entrada.
+                        </div>
+                    </div>
+
+                    <div class="faq-section">
+                        <h3>Normativas y Preguntas Frecuentes</h3>
+                        <p class="faq-intro">Lee detenidamente nuestras políticas antes de enviar tu solicitud de inscripción.</p>
+                        
+                        <details class="faq-item" open>
+                            <summary>¿Cuál es la política de asistencia?</summary>
+                            <p>Exigimos un 85% de asistencia obligatoria para emitir el certificado de finalización. Las ausencias deben justificarse mediante documentos oficiales presentados a la coordinación administrativa en un plazo no mayor a tres días.</p>
+                        </details>
+                        
+                        <details class="faq-item">
+                            <summary>¿Cómo funcionan las tutorías extra?</summary>
+                            <p>Si el profesor detecta dificultades constantes en las evaluaciones regulares, se te asignará obligatoriamente a nuestro programa de tutorías académicas. Estas sesiones son individuales y buscan corregir deficiencias específicas mediante nuestro modelo de evaluación continua.</p>
+                        </details>
+                        
+                        <details class="faq-item">
+                            <summary>¿Tienen convenios para el examen oficial?</summary>
+                            <p>Sí. Nuestro programa de preparación "Start Deutsch 1" sigue exactamente los mismos lineamientos que las pruebas del Goethe-Institut. Aunque nosotros no emitimos el certificado oficial B1 o B2, te gestionamos el cupo para que presentes la prueba en las sedes avaladas.</p>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Página Secreta (Easter Egg) -->
+        <section id="easter-egg" class="page-section">
+            <div class="secret-container">
+                <h1 class="secret-text">HÜNDIN!<br>ECHTE HÜNDIN</h1>
+                <p class="escape-hint">Presiona ESC para salir</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
