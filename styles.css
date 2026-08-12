@@ -21,7 +21,6 @@
 
 body {
     background-color: var(--memphis-bg);
-    /* Patrón de lunares clásico de los 80 */
     background-image: 
         radial-gradient(var(--memphis-pink) 18%, transparent 18%),
         radial-gradient(var(--memphis-yellow) 18%, transparent 18%);
